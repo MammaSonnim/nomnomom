@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+10.times do |i|
+  activity_index = i + 1
+  Activity.create(
+    name: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraphs.join("\n\n"),
+    size: "m"
+  )
+end
