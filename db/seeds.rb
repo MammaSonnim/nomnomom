@@ -12,6 +12,7 @@
   Activity.create(
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraphs.join("\n\n"),
+    value: Faker::Number.between(from: 1, to: 10),
     size: "m"
   )
 end

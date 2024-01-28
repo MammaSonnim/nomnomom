@@ -3,11 +3,8 @@
 <ul>
   <% @activities.each do |activity| %>
     <li>
-      <!-- Access attributes of each activity using activity.attribute_name -->
-      <strong>Name:</strong> <%= activity.name %><br>
-      <strong>Description:</strong> <%= activity.description %><br>
-      <strong>Size:</strong> <%= activity.size %><br>
-      <!-- Add more attributes as needed -->
+      <%= link_to activity.name, activity_path(activity.id) %>
+      <%= activity.value %>
     </li>
   <% end %>
 </ul>

@@ -1,0 +1,15 @@
+<h1>Activity <%= @activity.id %></h1>
+
+<article>
+  <h1>
+    <%= @activity.value %>
+  </h1>
+  <p>
+    <%= @activity.description %>
+  </p>
+  <p>
+    <%= @activity.value %>, <%= @activity.size %>, <%= @activity.created_at.in_time_zone('Warsaw').strftime("%H:%m %d.%m, %Y") %>
+  </p>
+</article>
+
+<% link_to 'Back', root_path %>
