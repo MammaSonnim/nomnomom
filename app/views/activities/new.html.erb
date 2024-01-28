@@ -1,0 +1,27 @@
+<h1>New activity</h1>
+
+<%= form_with model: @activity do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :size %><br>
+    <%= form.text_field :size %>
+  </div>
+
+  <div>
+    <%= form.label :value %><br>
+    <%= form.text_field :value %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

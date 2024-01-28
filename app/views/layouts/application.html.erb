@@ -12,5 +12,8 @@
 
   <body>
     <%= yield %>
+    <% if flash[:success] %>
+      <p class="flash"><%= flash[:success] %></p>
+    <% end %>
   </body>
 </html>
