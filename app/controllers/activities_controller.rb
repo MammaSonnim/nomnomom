@@ -25,6 +25,35 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+
+    if @activity.update(activity_params)
+      flash[:success] = 'Activity has beed updated sucessfully'
+      redirect_to activity_path(@activity)
+    else
+      flash[:failure] = 'Activity has not been updated'
+      render :edit
+    end
+  end
+
+  def destroy
+    debugger
+    @activity = Activity.find(params[:id])
+
+    if @activity.destroy
+      flash[:success] = 'Activity has beed deleted sucessfully'
+      redirect_to root_path
+    else
+      flash[:failure] = 'Activity has not been deleted'
+      render activity_path(@activity)
+    end
+  end
+
   private
 
   def activity_params
